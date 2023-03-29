@@ -16,7 +16,7 @@ export const Footer = styled.footer`
 `
 export const Main = styled.main`
     display: grid;
-    grid-template-column: 20rem 1fr;
+    grid-template-columns: 20rem 1fr;
     min-height: calc(100vh - 9.25rem);
 `
 export const Sidebar = styled.div`

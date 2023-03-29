@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import Welcome from './pages/Welcome';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
+import Student from './pages/Student';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <PrivateRoute component={<Dashboard/>}/>,
+  },
+  {
+    path: "/students",
+    element: <PrivateRoute component={<Student/>}/>,
   },
 ]);
 
