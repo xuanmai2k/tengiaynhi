@@ -5,9 +5,10 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Dashboard from './pages/Dashboard';
 import Welcome from './pages/Welcome';
+import Users from './pages/Users';
+import Products from './pages/Products';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
-import Student from './pages/Student';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,12 @@ const router = createBrowserRouter([
     element: <PrivateRoute component={<Dashboard/>}/>,
   },
   {
-    path: "/students",
-    element: <PrivateRoute component={<Student/>}/>,
+    path: "/users",
+    element: <PrivateRoute component={<Users/>}/>,
+  },
+  {
+    path: "/products",
+    element: <PrivateRoute component={<Products/>}/>,
   },
 ]);
 

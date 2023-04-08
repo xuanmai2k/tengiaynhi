@@ -1,35 +1,40 @@
-import { Header, Footer, Main, Sidebar, Content } from "./style";
-import{ Button } from "antd";
-import { useNavigate, Link } from 'react-router-dom';
+import { Header, Footer, Main, Sidebar, Content, Layout, Logo, MenuItem } from "./style";
+import { HomeOutlined, UserOutlined, GiftOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom';
+import AuthUser from "./AuthUser";
 
 const DefaultLayout =({children}) => {
-    const navigate = useNavigate ();
-
-    const onLogout =()=>{
-        localStorage.removeItem('token')
-        navigate("/");
-    }
+    
     return(
-        <div>
-            <Header>
-                <a>Green Academy</a>
-                <Button onClick={onLogout}>Layout</Button>
-            </Header>
+        <Layout>
+            <Sidebar>
+                <Logo>Green Academy</Logo>
 
-            <Main>
-                <Sidebar>
-                    <Link to='/students'>Student</Link>
-                    <Link to='/dashboard'>Dashboard</Link>
-                </Sidebar>
+                <Link to='/dashboard'>
+                    <MenuItem>
+                        <HomeOutlined />  <span>Dashboard</span>
+                    </MenuItem>
+                </Link>
+                <Link to='/products'>
+                    <MenuItem>
+                    <GiftOutlined /> <span>Product</span>
+                    </MenuItem>
+                </Link>
+                <Link to='/users'>
+                    <MenuItem>
+                        <UserOutlined /> <span>User</span>
+                    </MenuItem>
+                </Link>
+            </Sidebar>
 
-                <Content>
-                    {children}
-                </Content>
-            </Main>
-
-            <Footer>Powered by Mai</Footer>
-            
-        </div>
+            <Content>
+                <Header>
+                    <AuthUser/>
+                </Header>
+                <Main> {children} </Main>
+                <Footer>Powered by Mai</Footer>
+            </Content>
+        </Layout> 
     )
-    }
-    export default DefaultLayout;
+}
+export default DefaultLayout;

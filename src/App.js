@@ -1,11 +1,9 @@
-
-
-import Exam06 from './components/Exam06'; // sửa
+import FormLogin from './components/FormLogin'; // sửa
 
 const App = () => {
   
   return (
-    <Exam06/>// sửa
+    <FormLogin/>// sửa
   );
 };
 export default App;
